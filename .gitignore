@@ -1,0 +1,8 @@
+data/raw/
+data/pdb_clean/
+data/pdbqt/
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/

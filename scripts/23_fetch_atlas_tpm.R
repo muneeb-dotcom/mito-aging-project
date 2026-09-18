@@ -1,0 +1,10 @@
+tpm <- read.csv(gzfile("data/raw/GSE308970_TPM_Atlas_allbatches_merged_v3.csv.gz"), row.names = 1, check.names = FALSE)
+cat("Dimensions:", dim(tpm), "\n")
+cat("\nFirst 20 gene IDs:\n")
+print(head(rownames(tpm), 20))
+cat("\nFirst 10 sample column names:\n")
+print(head(colnames(tpm), 10))
+
+cat("\nSearching for mtDNA-style gene IDs:\n")
+mt_hits <- grep("^mt-|^ND[1-6]$|^COX[1-3]$|^CYTB$|^ATP6$|^ATP8$", rownames(tpm), ignore.case = TRUE, value = TRUE)
+print(mt_hits)
